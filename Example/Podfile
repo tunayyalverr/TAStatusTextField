@@ -1,0 +1,6 @@
+use_frameworks!
+target 'TAStatusTextField_Tests' do
+  pod 'TAStatusTextField', :path => '../'
+  
+  
+end
