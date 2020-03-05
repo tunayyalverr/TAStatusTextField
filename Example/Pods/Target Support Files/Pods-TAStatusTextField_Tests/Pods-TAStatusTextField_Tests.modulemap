@@ -1,0 +1,6 @@
+framework module Pods_TAStatusTextField_Tests {
+  umbrella header "Pods-TAStatusTextField_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

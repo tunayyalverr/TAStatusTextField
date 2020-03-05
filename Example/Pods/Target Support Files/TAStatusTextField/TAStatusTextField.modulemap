@@ -1,0 +1,6 @@
+framework module TAStatusTextField {
+  umbrella header "TAStatusTextField-umbrella.h"
+
+  export *
+  module * { export * }
+}

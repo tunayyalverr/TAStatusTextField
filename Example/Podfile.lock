@@ -1,0 +1,16 @@
+PODS:
+  - TAStatusTextField (0.1.0)
+
+DEPENDENCIES:
+  - TAStatusTextField (from `../`)
+
+EXTERNAL SOURCES:
+  TAStatusTextField:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TAStatusTextField: 0f7cf63ba3e7f674abd5525170e8750aeb9fbc1a
+
+PODFILE CHECKSUM: 2becc7cd17b68b991bb8aacffcb4602ab79ebda6
+
+COCOAPODS: 1.9.0
