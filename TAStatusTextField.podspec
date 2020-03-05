@@ -8,6 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TAStatusTextField'
+  s.swift_version    = '5.0'
   s.version          = '0.0.1'
   s.summary          = 'Bottom Line UITextField with Status Control TABottomLineTextField.'
 
