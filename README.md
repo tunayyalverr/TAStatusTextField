@@ -22,7 +22,7 @@ pod 'TAStatusTextField'
 
 ## Author
 
-tunayyalverr, tunay.alver@mobillium.com
+tunayyalverr, alver.tunay@gmail.com
 
 ## License
 
