@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 public class TAStatusTextField: UITextField {
         
     //MARK: - Outlets
@@ -31,12 +32,14 @@ public class TAStatusTextField: UITextField {
     //MARK: - Properties
     @IBInspectable var title: String! {
         didSet {
+            addTitleLabel()
             titleLabel.text = title
         }
     }
     
     @IBInspectable var errorText: String! {
         didSet {
+            addErrorLabel()
             errorLabel.text = errorText
         }
     }
