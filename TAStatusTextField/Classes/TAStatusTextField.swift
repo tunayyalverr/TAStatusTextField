@@ -44,23 +44,19 @@ public class TAStatusTextField: UITextField {
     var shouldSecureText: Bool?
     
     //MARK: State
-    enum Status {
+    public enum Status {
         case normal
         case editing
         case success
         case error
     }
     
-    var status: Status? {
+    public var status: Status? {
         didSet {
             updateViews()
 //            didUpdateStatus(status)
         }
     }
-    
-    //MARK: - Next Textfield
-    var nextTextInput: UIResponder?
-    var previousTextInput: UIResponder?
     
     //MARK: - Colors
     @IBInspectable var fieldTextColor: UIColor! = .clear {
@@ -124,13 +120,13 @@ public class TAStatusTextField: UITextField {
     }
     
     //MARK: - Setup
-    func setupFieldTexts(titleText: String?, errorText: String?, placeholderText: String?) {
+    public func setupFieldTexts(titleText: String?, errorText: String?, placeholderText: String?) {
         self.title = titleText
         self.errorText = errorText
         self.placeholder = placeholderText
     }
     
-    func setupFieldColors(fieldNormalTitleColor: UIColor?, fieldNormalBackgroundColor: UIColor?, fieldNormalBottomLineColor: UIColor?,
+    public func setupFieldColors(fieldNormalTitleColor: UIColor?, fieldNormalBackgroundColor: UIColor?, fieldNormalBottomLineColor: UIColor?,
                      fieldEditingTitleColor: UIColor?, fieldEditingBackgroundColor: UIColor?, fieldEditingBottomLineColor: UIColor?,
                      fieldSuccessTitleColor: UIColor?, fieldSuccessBackgroundColor: UIColor?, fieldSuccessBottonLineColor: UIColor?,
                      fieldErrorTitleColor: UIColor?, fieldErrorBackgroundColor: UIColor?, fieldErrorBottomLineColor: UIColor?) {
@@ -152,7 +148,7 @@ public class TAStatusTextField: UITextField {
         self.fieldErrorBottomLineColor = fieldErrorBottomLineColor
     }
     
-    func setupRightImages(normalImage: UIImage, editingImage: UIImage, successImage: UIImage, errorImage: UIImage) {
+    public func setupRightImages(normalImage: UIImage, editingImage: UIImage, successImage: UIImage, errorImage: UIImage) {
         self.normalImage = normalImage
         self.editingImage = editingImage
         self.successImage = successImage
