@@ -7,20 +7,22 @@
 
 import UIKit
 
+import UIKit
+
 @IBDesignable
 public class TAStatusTextField: UITextField {
         
     //MARK: - Outlets
-    private var titleLabel = UILabel()
-    private var errorLabel = UILabel()
+    private var titleLabel: UILabel!
     private var bottomLine: UIView!
     private var rightImageView: UIImageView!
+    private var errorLabel: UILabel!
     
     //MARK: - Image Names
-    @IBInspectable var normalImage = UIImage()
-    @IBInspectable var editingImage = UIImage()
-    @IBInspectable var successImage = UIImage()
-    @IBInspectable var errorImage = UIImage()
+    @IBInspectable var normalImage: UIImage?
+    @IBInspectable var editingImage: UIImage?
+    @IBInspectable var successImage: UIImage?
+    @IBInspectable var errorImage: UIImage?
     
     //MARK: - Numbers
     var defaultPadding = CGFloat(20)
@@ -30,17 +32,9 @@ public class TAStatusTextField: UITextField {
     var rightImageViewRightPadding = CGFloat(20)
     
     //MARK: - Properties
-    @IBInspectable var title: String! {
-        didSet {
-            titleLabel.text = title
-        }
-    }
+    @IBInspectable var title: String!
     
-    @IBInspectable var errorText: String! {
-        didSet {
-            errorLabel.text = errorText
-        }
-    }
+    @IBInspectable var errorText: String!
     
     var shouldSecureText: Bool?
     
@@ -52,10 +46,9 @@ public class TAStatusTextField: UITextField {
         case error
     }
     
-    public var status: Status? {
+    public var status: Status = .normal {
         didSet {
             updateViews()
-//            didUpdateStatus(status)
         }
     }
     
@@ -115,9 +108,8 @@ public class TAStatusTextField: UITextField {
     }
     
     func commonInit() {
-        self.status = .normal
-        
         addViews()
+        updateViews()
     }
     
     //MARK: - Setup
@@ -149,7 +141,7 @@ public class TAStatusTextField: UITextField {
         self.fieldErrorBottomLineColor = fieldErrorBottomLineColor
     }
     
-    public func setupRightImages(normalImage: UIImage, editingImage: UIImage, successImage: UIImage, errorImage: UIImage) {
+    public func setupRightImages(normalImage: UIImage?, editingImage: UIImage?, successImage: UIImage?, errorImage: UIImage?) {
         self.normalImage = normalImage
         self.editingImage = editingImage
         self.successImage = successImage
@@ -161,16 +153,16 @@ public class TAStatusTextField: UITextField {
     }
     
     //MARK: - Update Functions
-    func addViews() {
-        addTitleLabel()
+    public func addViews() {
+        self.addTitleLabel()
         self.updateText(withColor: fieldTextColor)
         self.addErrorLabel()
         self.addBottomLine()
     }
     
-    func updateViews() { //NOTE: - Field type must be nill this var is for viewController background update where textfield at !
+    func updateViews() {
         self.isSecureTextEntry = shouldSecureText ?? false
-        switch status! {
+        switch status {
         case .normal:
             self.backgroundColor = fieldNormalBackgroundColor
             self.updateTitleLabel(withColor: fieldNormalTitleColor)
@@ -194,7 +186,6 @@ public class TAStatusTextField: UITextField {
             self.updateTitleLabel(withColor: fieldErrorTitleColor)
             self.updateBottomLine(withColor: fieldErrorBottomLineColor)
             self.updateRightImage(image: errorImage)
-            
             self.updateErrorLabel(isHidden: false)
         }
     }
