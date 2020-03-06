@@ -16,8 +16,10 @@ public class TAStatusTextField: UITextField {
     private var errorLabel: UILabel!
     
     //MARK: - Image Names
-    var successImage = UIImage(named: "ic_check_circle_green")
-    var errorImage = UIImage(named: "ic_x_circle_red")
+    @IBInspectable var normalImage = UIImage()
+    @IBInspectable var editingImage = UIImage()
+    @IBInspectable var successImage = UIImage()
+    @IBInspectable var errorImage = UIImage()
     
     //MARK: - Numbers
     var defaultPadding = CGFloat(20)
@@ -150,6 +152,13 @@ public class TAStatusTextField: UITextField {
         self.fieldErrorBottomLineColor = fieldErrorBottomLineColor
     }
     
+    func setupRightImages(normalImage: UIImage, editingImage: UIImage, successImage: UIImage, errorImage: UIImage) {
+        self.normalImage = normalImage
+        self.editingImage = editingImage
+        self.successImage = successImage
+        self.errorImage = errorImage
+    }
+    
     override public func draw(_ rect: CGRect) {
         updateSubviewsFrame()
     }
@@ -169,13 +178,13 @@ public class TAStatusTextField: UITextField {
             self.backgroundColor = fieldNormalBackgroundColor
             self.updateTitleLabel(withColor: fieldNormalTitleColor)
             self.updateBottomLine(withColor: fieldNormalBottomLineColor)
-            self.updateRightImage(image: nil)
+            self.updateRightImage(image: normalImage)
             self.updateErrorLabel(isHidden: true)
         case .editing:
             self.backgroundColor = fieldEditingBackgroundColor
             self.updateTitleLabel(withColor: fieldEditingTitleColor)
             self.updateBottomLine(withColor: fieldEditingBottomLineColor)
-            self.updateRightImage(image: nil)
+            self.updateRightImage(image: editingImage)
             self.updateErrorLabel(isHidden: true)
         case .success:
             self.backgroundColor = fieldSuccessBackgroundColor
