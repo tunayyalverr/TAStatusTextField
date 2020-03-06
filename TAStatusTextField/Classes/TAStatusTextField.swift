@@ -11,10 +11,10 @@ import UIKit
 public class TAStatusTextField: UITextField {
         
     //MARK: - Outlets
-    private var titleLabel: UILabel!
+    private var titleLabel = UILabel()
+    private var errorLabel = UILabel()
     private var bottomLine: UIView!
     private var rightImageView: UIImageView!
-    private var errorLabel: UILabel!
     
     //MARK: - Image Names
     @IBInspectable var normalImage = UIImage()
@@ -32,14 +32,12 @@ public class TAStatusTextField: UITextField {
     //MARK: - Properties
     @IBInspectable var title: String! {
         didSet {
-            addTitleLabel()
             titleLabel.text = title
         }
     }
     
     @IBInspectable var errorText: String! {
         didSet {
-            addErrorLabel()
             errorLabel.text = errorText
         }
     }
