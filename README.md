@@ -26,8 +26,8 @@ Storyboard
 Textfield can be edited on storyboard but need to set initial status !
 
 Programmatically
-textField.setupFieldTexts(...)
-textField.setupFieldColors(...)
+textField.setupFieldTexts(...) 
+textField.setupFieldColors(...) 
 textField.status = .normal
 
 ## Author
