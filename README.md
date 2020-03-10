@@ -20,6 +20,16 @@ it, simply add the following line to your Podfile:
 pod 'TAStatusTextField'
 ```
 
+## Usage
+
+Storyboard
+Textfield can be edited on storyboard but need to set initial status !
+
+Programmatically
+textField.setupFieldTexts(...)
+textField.setupFieldColors(...)
+textField.status = .normal
+
 ## Author
 
 tunayyalverr, alver.tunay@gmail.com
