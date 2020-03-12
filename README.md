@@ -20,6 +20,9 @@ it, simply add the following line to your Podfile:
 pod 'TAStatusTextField'
 ```
 
+## Visual
+![](TAStatusTextFieldGIF.gif)
+
 ## Usage
 
 Storyboard
