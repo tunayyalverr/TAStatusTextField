@@ -18,6 +18,7 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'TAStatusTextField'
+pod 'TAStatusTextField', :git => 'https://github.com/tunayyalverr/TAStatusTextField.git'
 ```
 
 ## Visual
